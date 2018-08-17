@@ -22,4 +22,12 @@ node {
         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean verify/)
      }
    }
+   if(env.BRANCH_NAME == 'develop'){
+     stage("Upload"){
+        // Artifact repository upload steps here
+     }
+     stage("Deploy"){
+        // Deploy steps here
+     }
+   }
 }
