@@ -25,9 +25,20 @@ node {
    if(env.BRANCH_NAME == 'develop'){
      stage("Upload"){
         // Artifact repository upload steps here
+        echo "uploaded to artifactory"
      }
      stage("Deploy"){
         // Deploy steps here
+        echo "deployed to dev"
      }
    }
+   if(env.BRANCH_NAME ==~ /release.*/){
+     stage("Version"){
+        // Artifact repository upload steps here
+        echo "versioned the package"
+     }
+     stage("Promote"){
+        // Deploy steps here
+        echo "promoted to qa"
+     }
 }
