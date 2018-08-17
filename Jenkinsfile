@@ -41,4 +41,5 @@ node {
         // Deploy steps here
         echo "promoted to qa"
      }
+   }
 }
