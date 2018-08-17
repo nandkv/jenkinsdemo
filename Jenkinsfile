@@ -30,4 +30,13 @@ node {
         // Deploy steps here
      }
    }
+   if(env.BRANCH_NAME ==~ /release.*/){
+     stage("Version"){
+        // Artifact repository upload steps here
+     }
+     stage("Promote"){
+        // Deploy steps here
+     }
+   }
+   
 }
